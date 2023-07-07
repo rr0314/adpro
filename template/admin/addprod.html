@@ -1,0 +1,106 @@
+{% extends 'admin/hf.html' %}
+{% block content %}
+
+
+<nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+  <div class="container-fluid">
+    <div class="navbar-wrapper">
+      <a class="navbar-brand" class="active">ADD PRODUCT</a>
+    </div>
+    
+  </div>
+</nav>
+<!-- End Navbar -->
+<div class="content">
+  <div class="container-fluid">
+    <!--  -->
+    <!--  -->
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
+        <div class="card">
+          
+        
+          
+          <div class="card-body">
+          <form action="/addproduct/" method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">PRODUCT NAME</label>
+                    <input type="text" name="pname" id="pname" class="form-control" >
+                  </div>
+                </div>
+               
+                
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">OLD PRICE</label>
+                    <input type="text" id="oldprice" name="oldprice" class="form-control" >
+                  </div>
+                </div>
+                
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">NEW PRICE</label>
+                    <input type="text" id="newprice" name="newprice" class="form-control" >
+                  </div>
+                </div>
+                
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">PRODUCT DESCRIPTION</label>
+                    <input type="text" id="pdescription" name="pdescription" class="form-control" >
+                  </div>
+                </div>
+                
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <!-- <div class="form-group"> -->
+                    <label class="bmd-label-floating" for="exampleInput">Select image</label>
+                    <input type="file" name="image" id="selectimage"  >
+                  <!-- </div> -->
+                </div>
+                
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="select_catagory">
+                    <select class="select" name="s1">
+                      <option>Men</option>
+                      <option>Women</option>
+                      <option>Football</option>
+                      <option>Run</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            <button type="submit" class="btn btn-info">Add Product</button>
+             </form> 
+              
+              <div class="clearfix"></div>
+            
+          </div>
+
+
+
+
+          </div> 
+         
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
